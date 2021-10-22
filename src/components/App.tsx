@@ -1,6 +1,6 @@
 import React from "react";
+import { HomePage } from "../pages/Homepage/HomepageComponent";
 import "./App.css";
-import { HomePage } from "./Homepage/HomepageComponent";
 
 function App(): JSX.Element {
   return <HomePage />;

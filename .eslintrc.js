@@ -35,7 +35,8 @@ module.exports = {
     "no-console": "warn",
     "react/jsx-newline": "warn",
     "react/no-array-index-key": "warn",
-    "es/no-classes": "error",
+    // remove this
+    "es/no-classes": "off",
     "import/named": "off",
     "react/no-multi-comp": ["error", { ignoreStateless: false }],
     "react/no-access-state-in-setstate": "error",
