@@ -1,7 +1,6 @@
 import React from "react";
 import { EmptyObject } from "../../helpers/EmptyObject";
 import { MenuItem } from "../MenuItem/MenuItemComponent";
-import { MenuItemProps } from "../MenuItem/MenuItemInterfaces";
 import { DirectoryState } from "./DirectoryInterfaces";
 import "./DirectoryStyles.scss";
 
@@ -49,8 +48,8 @@ export class Directory extends React.Component<EmptyObject, DirectoryState> {
 
   render(): JSX.Element {
     return (
-      <div className="homepage">
-        {this.state.sections.map((section: MenuItemProps) => (
+      <div className="directoryMenu">
+        {this.state.sections.map((section) => (
           <MenuItem key={section.id} {...section} />
         ))}
       </div>
