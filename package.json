@@ -2,6 +2,7 @@
   "name": "clothing-shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fennecfly.github.io/clothing-shop",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -16,6 +17,7 @@
     "eslint-config-airbnb-typescript": "^14.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-es": "^4.1.0",
+    "gh-pages": "^3.2.3",
     "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
@@ -41,7 +43,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
