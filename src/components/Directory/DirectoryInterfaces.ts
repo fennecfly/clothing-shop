@@ -1,5 +1,11 @@
-import { MenuItemProps } from "../MenuItem/MenuItemInterfaces";
+export interface Section {
+  title: string;
+  imageUrl: string;
+  id: number;
+  linkUrl: string;
+  size?: "large";
+}
 
 export interface DirectoryState {
-  sections: MenuItemProps[];
+  sections: Section[];
 }
