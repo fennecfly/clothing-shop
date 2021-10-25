@@ -2,12 +2,15 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { HashRouter } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header/HeaderComponent";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 
 function App(): JSX.Element {
   return (
     <HashRouter basename="/">
+      <Header />
+
       <Switch>
         <Route exact={true} path="/" component={HomePage} />
 

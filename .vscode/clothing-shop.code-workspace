@@ -7,8 +7,6 @@
   "settings": {
     "workbench.colorCustomizations": {
       "activityBar.background": "#282c34",
-      "activityBar.foreground": "#61dafb",
-      "activityBar.inactiveForeground": "#61dafb84"
     },
     "css.validate": false,
     "editor.formatOnPaste": true,
