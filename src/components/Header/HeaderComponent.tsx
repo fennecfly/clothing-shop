@@ -6,7 +6,7 @@ import "./HeaderStyles.scss";
 const Header = (): JSX.Element => (
   <div className="header">
     <Link to="/">
-      <Logo className="logo" />
+      <Logo className="logoContainer" />
     </Link>
 
     <div className="options">

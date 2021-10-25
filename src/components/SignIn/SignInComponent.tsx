@@ -1,0 +1,62 @@
+import React, { BaseSyntheticEvent } from "react";
+import { EmptyObject } from "../../helpers/EmptyObject";
+import FormInput from "../FormInput/FormInputComponent";
+import { SignInState } from "./SignInInterfaces";
+import "./SignInStyles.scss";
+
+class SignIn extends React.Component<EmptyObject, SignInState> {
+  constructor(props: EmptyObject) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: "",
+    };
+  }
+
+  handleSubmit = (event: BaseSyntheticEvent): void => {
+    event.preventDefault();
+    this.setState({ email: "", password: "" });
+  };
+
+  handleChange = (event: BaseSyntheticEvent): void => {
+    const { value, name } = event.target;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    this.setState({ [name]: value });
+  };
+
+  render(): JSX.Element {
+    return (
+      <div className="signIn">
+        <h2>I already have an account</h2>
+
+        <span>Sign in with your email and password</span>
+
+        <form onSubmit={this.handleSubmit}>
+          <FormInput
+            label="Email"
+            name="email"
+            type="email"
+            value={this.state.email}
+            handleChange={this.handleChange}
+            required={true}
+          />
+
+          <FormInput
+            label="Password"
+            name="password"
+            type="password"
+            value={this.state.password}
+            handleChange={this.handleChange}
+            required={true}
+          />
+
+          <input type="submit" value="Submit Form" />
+        </form>
+      </div>
+    );
+  }
+}
+
+export default SignIn;

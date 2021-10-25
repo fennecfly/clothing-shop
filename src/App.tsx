@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header/HeaderComponent";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
+import SignInAndUpPage from "./pages/SignInAndUp/SignInAndUpComponent";
 
 function App(): JSX.Element {
   return (
@@ -15,6 +16,8 @@ function App(): JSX.Element {
         <Route exact={true} path="/" component={HomePage} />
 
         <Route path="/shop" component={ShopPage} />
+
+        <Route path="/signIn" component={SignInAndUpPage} />
       </Switch>
     </HashRouter>
   );
