@@ -1,5 +1,6 @@
 import React, { BaseSyntheticEvent } from "react";
 import { EmptyObject } from "../../helpers/EmptyObject";
+import CustomButton from "../CustomButton/CustomButtonComponent";
 import FormInput from "../FormInput/FormInputComponent";
 import { SignInState } from "./SignInInterfaces";
 import "./SignInStyles.scss";
@@ -29,7 +30,7 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
   render(): JSX.Element {
     return (
       <div className="signIn">
-        <h2>I already have an account</h2>
+        <h2 className="title">I already have an account</h2>
 
         <span>Sign in with your email and password</span>
 
@@ -52,7 +53,7 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
             required={true}
           />
 
-          <input type="submit" value="Submit Form" />
+          <CustomButton type="submit">sign in</CustomButton>
         </form>
       </div>
     );

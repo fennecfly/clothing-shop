@@ -32,6 +32,7 @@ module.exports = {
   ],
   rules: {
     "react/self-closing-comp": "warn",
+    "@typescript-eslint/lines-between-class-members": "warn",
     "no-console": "warn",
     "react/jsx-newline": "warn",
     "react/no-array-index-key": "warn",
