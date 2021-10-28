@@ -1,3 +1,5 @@
+import { EmptyObject } from "../../helpers/EmptyObject";
+
 export interface Section {
   title: string;
   imageUrl: string;
@@ -9,3 +11,5 @@ export interface Section {
 export interface DirectoryState {
   sections: Section[];
 }
+
+export type DirectoryProps = EmptyObject;

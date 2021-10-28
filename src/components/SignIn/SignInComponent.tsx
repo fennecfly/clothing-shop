@@ -1,4 +1,5 @@
 import React, { BaseSyntheticEvent } from "react";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 import { EmptyObject } from "../../helpers/EmptyObject";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import FormInput from "../FormInput/FormInputComponent";
@@ -54,6 +55,10 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
           />
 
           <CustomButton type="submit">sign in</CustomButton>
+
+          <CustomButton onClick={signInWithGoogle}>
+            Sign in with Google
+          </CustomButton>
         </form>
       </div>
     );
