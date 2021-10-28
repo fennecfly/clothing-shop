@@ -1,3 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 
-export type CustomButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export interface CustomButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isGoogleSignIn?: true;
+}

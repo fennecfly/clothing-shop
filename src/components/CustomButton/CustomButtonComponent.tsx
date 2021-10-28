@@ -4,9 +4,13 @@ import "./CustomButtonStyles.scss";
 
 const CustomButton = ({
   children,
+  isGoogleSignIn,
   ...otherProps
 }: CustomButtonProps): JSX.Element => (
-  <button className="customButton" {...otherProps}>
+  <button
+    className={`${isGoogleSignIn ? "googleSignIn" : ""} customButton`}
+    {...otherProps}
+  >
     {children}
   </button>
 );

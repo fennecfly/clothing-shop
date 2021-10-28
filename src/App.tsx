@@ -35,7 +35,7 @@ class App extends React.Component<AppProps, AppState> {
   render(): JSX.Element {
     return (
       <HashRouter basename="/">
-        <Header />
+        <Header currentUser={this.state.currentUser} />
 
         <Switch>
           <Route exact={true} path="/" component={HomePage} />
