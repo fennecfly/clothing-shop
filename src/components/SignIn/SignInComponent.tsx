@@ -27,13 +27,15 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
 
       this.setState({ email: "", password: "" });
     } catch (error) {
-      if (
-        error instanceof FirebaseError &&
-        error.code === "auth/user-not-found"
-      ) {
-        alert("This user doesn't exist");
+      if (error instanceof FirebaseError) {
+        if (error.code === "auth/user-not-found") {
+          alert("This user doesn't exist");
+        } else if (error.code === "auth/wrong-password") {
+          alert("The password is wrong or the user signed up with Google");
+        } else {
+          console.log(error);
+        }
       } else {
-        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -74,7 +76,11 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
           <div className="buttons">
             <CustomButton type="submit">sign in</CustomButton>
 
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn={true}>
+            <CustomButton
+              type="button"
+              onClick={signInWithGoogle}
+              isGoogleSignIn={true}
+            >
               Sign in with Google
             </CustomButton>
           </div>

@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { SyntheticEvent } from "react";
 import { rethrow } from "../helpers/rethrow";
 import { AdditionalCreateUserData } from "./firebaseInterfaces";
 
@@ -43,8 +42,7 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 
-export const signInWithGoogle = (event: SyntheticEvent): void => {
-  event.preventDefault();
+export const signInWithGoogle = (): void => {
   auth.signInWithPopup(provider).catch(rethrow);
 };
 

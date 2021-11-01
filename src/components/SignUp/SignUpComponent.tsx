@@ -52,7 +52,6 @@ class SignUp extends React.Component<EmptyObject, SignInState> {
         ) {
           alert("This email is already used");
         } else {
-          // eslint-disable-next-line no-console
           console.log(error);
         }
       }
