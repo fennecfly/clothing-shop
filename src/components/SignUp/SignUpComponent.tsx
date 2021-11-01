@@ -1,3 +1,4 @@
+import { FirebaseError } from "@firebase/util";
 import React, { BaseSyntheticEvent } from "react";
 import { auth, createUserDocument } from "../../firebase/firebaseUtils";
 import { EmptyObject } from "../../helpers/EmptyObject";
@@ -28,20 +29,32 @@ class SignUp extends React.Component<EmptyObject, SignInState> {
     } else if (password.length < 6) {
       alert("Password should be at least 6 characters");
     } else {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
+      try {
+        const { user } = await auth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
 
-      if (user) {
-        await createUserDocument(user, { displayName });
+        if (user) {
+          await createUserDocument(user, { displayName });
 
-        this.setState({
-          email: "",
-          password: "",
-          displayName: "",
-          confirmPassword: "",
-        });
+          this.setState({
+            email: "",
+            password: "",
+            displayName: "",
+            confirmPassword: "",
+          });
+        }
+      } catch (error) {
+        if (
+          error instanceof FirebaseError &&
+          error.code === "auth/email-already-in-use"
+        ) {
+          alert("This email is already used");
+        } else {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        }
       }
     }
   };

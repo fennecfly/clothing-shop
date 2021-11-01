@@ -38,6 +38,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-newline": "warn",
     "react/no-array-index-key": "warn",
+    "import/no-extraneous-dependencies": "off",
     // remove this
     "es/no-classes": "off",
     "import/named": "off",

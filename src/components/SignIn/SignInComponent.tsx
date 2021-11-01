@@ -1,5 +1,6 @@
+import { FirebaseError } from "@firebase/util";
 import React, { BaseSyntheticEvent } from "react";
-import { signInWithGoogle } from "../../firebase/firebaseUtils";
+import { auth, signInWithGoogle } from "../../firebase/firebaseUtils";
 import { EmptyObject } from "../../helpers/EmptyObject";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import FormInput from "../FormInput/FormInputComponent";
@@ -16,9 +17,26 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
     };
   }
 
-  handleSubmit = (event: BaseSyntheticEvent): void => {
+  handleSubmit = async (event: BaseSyntheticEvent): Promise<void> => {
     event.preventDefault();
-    this.setState({ email: "", password: "" });
+
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      this.setState({ email: "", password: "" });
+    } catch (error) {
+      if (
+        error instanceof FirebaseError &&
+        error.code === "auth/user-not-found"
+      ) {
+        alert("This user doesn't exist");
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      }
+    }
   };
 
   handleChange = (event: BaseSyntheticEvent): void => {
