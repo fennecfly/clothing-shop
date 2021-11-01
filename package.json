@@ -13,6 +13,7 @@
     "@types/react-dom": "^16.9.14",
     "@types/react-router-dom": "^5.3.1",
     "@typescript-eslint/parser": "^4.33.0",
+    "dayjs": "^1.10.7",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^14.0.1",
     "eslint-config-prettier": "^8.3.0",
@@ -44,7 +45,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

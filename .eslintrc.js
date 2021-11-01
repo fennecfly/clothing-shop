@@ -34,6 +34,8 @@ module.exports = {
     "react/self-closing-comp": "warn",
     "@typescript-eslint/lines-between-class-members": "warn",
     "no-console": "warn",
+    "@typescript-eslint/no-empty-interface": "warn",
+    "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-newline": "warn",
     "react/no-array-index-key": "warn",
     // remove this
@@ -60,16 +62,7 @@ module.exports = {
     "multiline-comment-style": ["error", "separate-lines"],
     "quote-props": ["error", "as-needed"],
     "no-plusplus": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        packageDir: __dirname,
-        devDependencies: ["src/tests/**", "*.js"],
-        optionalDependencies: false,
-      },
-    ],
     "@typescript-eslint/no-use-before-define": "off",
-    curly: ["error", "all"],
     "@typescript-eslint/no-floating-promises": 2,
     "import/prefer-default-export": "off",
   },
@@ -93,8 +86,8 @@ module.exports = {
       rules: {
         "no-underscore-dangle": "off",
         "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-empty-interface": "error",
       },
     },
   ],

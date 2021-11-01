@@ -1,5 +1,5 @@
 import React, { BaseSyntheticEvent } from "react";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { signInWithGoogle } from "../../firebase/firebaseUtils";
 import { EmptyObject } from "../../helpers/EmptyObject";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import FormInput from "../FormInput/FormInputComponent";
@@ -23,7 +23,6 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
 
   handleChange = (event: BaseSyntheticEvent): void => {
     const { value, name } = event.target;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     this.setState({ [name]: value });
   };
