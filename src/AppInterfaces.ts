@@ -1,9 +1,4 @@
-export interface User {
-  id: string;
-  creationDate: string;
-  displayName: string;
-  email: string;
-}
+import { User } from "./redux/user/userInterfaces";
 
 export interface AppState {
   currentUser: User | null;

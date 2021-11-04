@@ -68,13 +68,6 @@ module.exports = {
   },
   overrides: [
     {
-      // enable the rule specifically for TypeScript files
-      files: ["*.ts", "*.tsx"],
-      rules: {
-        "@typescript-eslint/explicit-module-boundary-types": ["error"],
-      },
-    },
-    {
       files: ["*.js"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
@@ -86,8 +79,6 @@ module.exports = {
       rules: {
         "no-underscore-dangle": "off",
         "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-empty-interface": "error",
       },
     },
   ],
