@@ -1,3 +1,3 @@
-import { AppState } from "../../AppInterfaces";
+import { UserState } from "../../redux/user/userInterfaces";
 
-export type HeaderProps = AppState;
+export type HeaderProps = UserState;

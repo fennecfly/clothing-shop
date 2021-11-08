@@ -2,15 +2,15 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { HashRouter } from "react-router-dom";
 import "./App.css";
-import { AppState, User } from "./AppInterfaces";
 import Header from "./components/Header/HeaderComponent";
 import { auth, createUserDocument } from "./firebase/firebaseUtils";
 import { EmptyObject } from "./helpers/EmptyObject";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
+import { User, UserState } from "./redux/user/userInterfaces";
 
-class App extends React.Component<EmptyObject, AppState> {
+class App extends React.Component<EmptyObject, UserState> {
   constructor(props: EmptyObject) {
     super(props);
 
@@ -49,7 +49,7 @@ class App extends React.Component<EmptyObject, AppState> {
   render(): JSX.Element {
     return (
       <HashRouter basename="/">
-        <Header currentUser={this.state.currentUser} />
+        <Header />
 
         <Switch>
           <Route exact={true} path="/" component={HomePage} />
