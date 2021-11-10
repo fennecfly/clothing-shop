@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebaseUtils";
 import { RootState } from "../../redux/store";
+import CartDropdown from "../CartDropdown/CartDropdownComponent";
+import CartIcon from "../CartIcon/CartIconComponent";
 import { HeaderProps } from "./HeaderInterfaces";
 import "./HeaderStyles.scss";
 
@@ -31,7 +33,11 @@ const Header = ({ currentUser }: HeaderProps): JSX.Element => (
           SIGN IN
         </Link>
       )}
+
+      <CartIcon />
     </div>
+
+    <CartDropdown />
   </div>
 );
 
