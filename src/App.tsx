@@ -8,9 +8,9 @@ import { EmptyObject } from "./helpers/EmptyObject";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
-import { User, UserState } from "./redux/user/userInterfaces";
+import { CurrentUserState, User } from "./redux/user/userInterfaces";
 
-class App extends React.Component<EmptyObject, UserState> {
+class App extends React.Component<EmptyObject, CurrentUserState> {
   constructor(props: EmptyObject) {
     super(props);
 

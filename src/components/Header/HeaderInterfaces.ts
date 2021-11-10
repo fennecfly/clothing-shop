@@ -1,3 +1,3 @@
-import { UserState } from "../../redux/user/userInterfaces";
+import { CurrentUserState } from "../../redux/user/userInterfaces";
 
-export type HeaderProps = UserState;
+export type HeaderProps = CurrentUserState;
