@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/clothing-shop/static/css/main.698fcc18.chunk.css",
-    "main.js": "/clothing-shop/static/js/main.35558f35.chunk.js",
-    "main.js.map": "/clothing-shop/static/js/main.35558f35.chunk.js.map",
+    "main.js": "/clothing-shop/static/js/main.0b42e86e.chunk.js",
+    "main.js.map": "/clothing-shop/static/js/main.0b42e86e.chunk.js.map",
     "runtime-main.js": "/clothing-shop/static/js/runtime-main.985f1829.js",
     "runtime-main.js.map": "/clothing-shop/static/js/runtime-main.985f1829.js.map",
-    "static/js/2.bb78476a.chunk.js": "/clothing-shop/static/js/2.bb78476a.chunk.js",
-    "static/js/2.bb78476a.chunk.js.map": "/clothing-shop/static/js/2.bb78476a.chunk.js.map",
+    "static/js/2.845c514c.chunk.js": "/clothing-shop/static/js/2.845c514c.chunk.js",
+    "static/js/2.845c514c.chunk.js.map": "/clothing-shop/static/js/2.845c514c.chunk.js.map",
     "index.html": "/clothing-shop/index.html",
     "static/css/main.698fcc18.chunk.css.map": "/clothing-shop/static/css/main.698fcc18.chunk.css.map",
-    "static/js/2.bb78476a.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.bb78476a.chunk.js.LICENSE.txt",
+    "static/js/2.845c514c.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.845c514c.chunk.js.LICENSE.txt",
     "static/media/crown.207ae289.svg": "/clothing-shop/static/media/crown.207ae289.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.985f1829.js",
-    "static/js/2.bb78476a.chunk.js",
+    "static/js/2.845c514c.chunk.js",
     "static/css/main.698fcc18.chunk.css",
-    "static/js/main.35558f35.chunk.js"
+    "static/js/main.0b42e86e.chunk.js"
   ]
 }
