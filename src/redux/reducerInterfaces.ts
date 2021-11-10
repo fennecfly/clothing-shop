@@ -1,4 +1,4 @@
 export interface MyReducerAction<Type> {
-  type: "SET_CURRENT_USER";
+  type: string;
   payload: Type;
 }

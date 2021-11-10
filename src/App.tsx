@@ -1,6 +1,6 @@
 import React, { Dispatch } from "react";
 import { connect } from "react-redux";
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 import { HashRouter } from "react-router-dom";
 import "./App.css";
 import { AppProps } from "./AppInterfaces";
@@ -11,6 +11,7 @@ import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
 import { MyReducerAction } from "./redux/reducerInterfaces";
+import { RootState } from "./redux/store";
 import { getSetCurrentUserAction } from "./redux/user/userActions";
 import { CurrentUser, User } from "./redux/user/userInterfaces";
 
@@ -52,12 +53,22 @@ class App extends React.Component<AppProps, EmptyObject> {
 
           <Route path="/shop" component={ShopPage} />
 
-          <Route path="/signIn" component={SignInAndUpPage} />
+          <Route
+            exact={true}
+            path="/signIn"
+            render={() =>
+              this.props.currentUser ? <Redirect to="/" /> : <SignInAndUpPage />
+            }
+          />
         </Switch>
       </HashRouter>
     );
   }
 }
+
+const mapStateToProps = ({ user }: RootState) => ({
+  currentUser: user.currentUser,
+});
 
 const mapDispatchToProps = (
   dispatch: Dispatch<MyReducerAction<CurrentUser>>
@@ -66,4 +77,4 @@ const mapDispatchToProps = (
     dispatch(getSetCurrentUserAction(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

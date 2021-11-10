@@ -1,4 +1,5 @@
 import { MyReducerAction } from "../reducerInterfaces";
+import { UserActionTypes } from "./userActionTypes";
 import { CurrentUser, CurrentUserState } from "./userInterfaces";
 
 const INITIAL_STATE: CurrentUserState = {
@@ -10,7 +11,7 @@ const userReducer = (
   action: MyReducerAction<CurrentUser>
 ): CurrentUserState => {
   switch (action.type) {
-    case "SET_CURRENT_USER":
+    case UserActionTypes.SET_CURRENT_USER:
       return {
         ...state,
         currentUser: action.payload,
