@@ -5,6 +5,8 @@ export interface User {
   email: string;
 }
 
+export type CurrentUser = User | null;
+
 export interface CurrentUserState {
-  currentUser: User | null;
+  currentUser: CurrentUser;
 }

@@ -1,41 +1,37 @@
-import React from "react";
+import React, { Dispatch } from "react";
+import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { HashRouter } from "react-router-dom";
 import "./App.css";
+import { AppProps } from "./AppInterfaces";
 import Header from "./components/Header/HeaderComponent";
 import { auth, createUserDocument } from "./firebase/firebaseUtils";
 import { EmptyObject } from "./helpers/EmptyObject";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
-import { CurrentUserState, User } from "./redux/user/userInterfaces";
+import { MyReducerAction } from "./redux/reducerInterfaces";
+import { getSetCurrentUserAction } from "./redux/user/userActions";
+import { CurrentUser, User } from "./redux/user/userInterfaces";
 
-class App extends React.Component<EmptyObject, CurrentUserState> {
-  constructor(props: EmptyObject) {
-    super(props);
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
+class App extends React.Component<AppProps, EmptyObject> {
   unsubscribeFromAuth: null | firebase.default.Unsubscribe = null;
 
   componentDidMount(): void {
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserDocument(userAuth, {});
 
         userRef.onSnapshot((snapShot) => {
-          this.setState({
-            currentUser: {
-              id: snapShot.id,
-              ...(snapShot.data() as Omit<User, "id">),
-            },
+          setCurrentUser({
+            id: snapShot.id,
+            ...(snapShot.data() as Omit<User, "id">),
           });
         });
       } else {
-        this.setState({ currentUser: null });
+        setCurrentUser(userAuth);
       }
     });
   }
@@ -63,4 +59,11 @@ class App extends React.Component<EmptyObject, CurrentUserState> {
   }
 }
 
-export default App;
+const mapDispatchToProps = (
+  dispatch: Dispatch<MyReducerAction<CurrentUser>>
+) => ({
+  setCurrentUser: (user: CurrentUser) =>
+    dispatch(getSetCurrentUserAction(user)),
+});
+
+export default connect(null, mapDispatchToProps)(App);

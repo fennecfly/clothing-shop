@@ -1,5 +1,5 @@
 import { MyReducerAction } from "../reducerInterfaces";
-import { CurrentUserState, User } from "./userInterfaces";
+import { CurrentUser, CurrentUserState } from "./userInterfaces";
 
 const INITIAL_STATE: CurrentUserState = {
   currentUser: null,
@@ -7,7 +7,7 @@ const INITIAL_STATE: CurrentUserState = {
 
 const userReducer = (
   state: CurrentUserState = INITIAL_STATE,
-  action: MyReducerAction<User>
+  action: MyReducerAction<CurrentUser>
 ): CurrentUserState => {
   switch (action.type) {
     case "SET_CURRENT_USER":
