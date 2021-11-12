@@ -13,6 +13,7 @@ import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
 import { MyReducerAction } from "./redux/reducerInterfaces";
 import { RootState } from "./redux/store";
 import { getSetCurrentUserAction } from "./redux/user/userActions";
+import { UserActionTypes } from "./redux/user/userActionTypes";
 import { CurrentUser, User } from "./redux/user/userInterfaces";
 
 class App extends React.Component<AppProps, EmptyObject> {
@@ -32,7 +33,7 @@ class App extends React.Component<AppProps, EmptyObject> {
           });
         });
       } else {
-        setCurrentUser(userAuth);
+        setCurrentUser(null);
       }
     });
   }
@@ -71,7 +72,9 @@ const mapStateToProps = ({ user }: RootState) => ({
 });
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<MyReducerAction<CurrentUser>>
+  dispatch: Dispatch<
+    MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser>
+  >
 ) => ({
   setCurrentUser: (user: CurrentUser) =>
     dispatch(getSetCurrentUserAction(user)),

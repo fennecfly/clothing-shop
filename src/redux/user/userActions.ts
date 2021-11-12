@@ -4,7 +4,7 @@ import { CurrentUser } from "./userInterfaces";
 
 export const getSetCurrentUserAction = (
   user: CurrentUser
-): MyReducerAction<CurrentUser> => ({
-  type: UserActionTypes.SET_CURRENT_USER,
+): MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser> => ({
+  type: UserActionTypes.SetCurrentUser,
   payload: user,
 });

@@ -1,17 +1,13 @@
-import { MyReducerAction } from "../reducerInterfaces";
 import { UserActionTypes } from "./userActionTypes";
-import { CurrentUser, CurrentUserState } from "./userInterfaces";
+import { CurrentUserState, UserReducer } from "./userInterfaces";
 
-const INITIAL_STATE: CurrentUserState = {
+const initialState: CurrentUserState = {
   currentUser: null,
 };
 
-const userReducer = (
-  state: CurrentUserState = INITIAL_STATE,
-  action: MyReducerAction<CurrentUser>
-): CurrentUserState => {
+const userReducer: UserReducer = (state = initialState, action) => {
   switch (action.type) {
-    case UserActionTypes.SET_CURRENT_USER:
+    case UserActionTypes.SetCurrentUser:
       return {
         ...state,
         currentUser: action.payload,
