@@ -1,3 +1,3 @@
-import { CollectionData } from "../../pages/ShopPage/ShopPageInterfaces";
+import { Collection } from "../../shopData/shopDataInterfaces";
 
-export type CollectionPreviewProps = Omit<CollectionData, "id">;
+export type CollectionPreviewProps = Omit<Collection, "id">;

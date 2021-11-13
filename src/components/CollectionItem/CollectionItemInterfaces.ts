@@ -1,3 +1,6 @@
-import { CollectionItemData } from "../../pages/ShopPage/ShopPageInterfaces";
+import { Item } from "../../shopData/shopDataInterfaces";
 
-export type CollectionItemProps = Omit<CollectionItemData, "id">;
+export interface CollectionItemProps {
+  item: Item;
+  addCartItem: (item: Item) => void;
+}

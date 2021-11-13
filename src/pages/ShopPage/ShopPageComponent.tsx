@@ -1,10 +1,11 @@
 import React from "react";
 import CollectionPreview from "../../components/CollectionPreview/CollectionPreviewComponent";
-import { shopData } from "./shopData";
-import { ShopPageProps, ShopPageState } from "./ShopPageInterfaces";
+import { EmptyObject } from "../../helpers/EmptyObject";
+import { shopData } from "../../shopData/shopData";
+import { ShopPageState } from "./ShopPageInterfaces";
 
-class ShopPage extends React.Component<ShopPageProps, ShopPageState> {
-  constructor(props: ShopPageProps) {
+class ShopPage extends React.Component<EmptyObject, ShopPageState> {
+  constructor(props: EmptyObject) {
     super(props);
 
     this.state = {
