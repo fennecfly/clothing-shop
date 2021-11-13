@@ -6,7 +6,7 @@ const CartDropdown = (): JSX.Element => (
   <div className="cartDropdown">
     <div className="cartItems" />
 
-    <CustomButton>GO TO CHECKOUT</CustomButton>
+    <CustomButton inverted={true}>GO TO CHECKOUT</CustomButton>
   </div>
 );
 

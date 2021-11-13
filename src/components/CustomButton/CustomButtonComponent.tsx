@@ -5,10 +5,13 @@ import "./CustomButtonStyles.scss";
 const CustomButton = ({
   children,
   isGoogleSignIn,
+  inverted,
   ...otherProps
 }: CustomButtonProps): JSX.Element => (
   <button
-    className={`${isGoogleSignIn ? "googleSignIn" : ""} customButton`}
+    className={`${inverted ? "inverted" : ""} ${
+      isGoogleSignIn ? "googleSignIn" : ""
+    } customButton`}
     {...otherProps}
   >
     {children}
