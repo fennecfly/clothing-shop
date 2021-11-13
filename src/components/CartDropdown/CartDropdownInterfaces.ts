@@ -1,6 +1,5 @@
 import { CartItem } from "../../redux/cart/cartInterfaces";
 
-export interface CartIconProps {
-  toggleCartHidden: () => void;
+export interface CartDropdownProps {
   cartItems: CartItem[];
 }

@@ -8,7 +8,7 @@ export interface CartItem extends Item {
 
 export interface CartState {
   hidden: boolean;
-  cartItems: CartItem[];
+  items: CartItem[];
 }
 
 export type CartReducer = {
