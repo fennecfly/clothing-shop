@@ -12,7 +12,7 @@ import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
 import { MyReducerAction } from "./redux/reducerInterfaces";
 import { RootState } from "./redux/store";
-import { getSetCurrentUserAction } from "./redux/user/userActions";
+import { setCurrentUserAction } from "./redux/user/userActions";
 import { UserActionTypes } from "./redux/user/userActionTypes";
 import { CurrentUser, User } from "./redux/user/userInterfaces";
 
@@ -67,8 +67,8 @@ class App extends React.Component<AppProps, EmptyObject> {
   }
 }
 
-const mapStateToProps = ({ user }: RootState) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = ({ user: { currentUser } }: RootState) => ({
+  currentUser,
 });
 
 const mapDispatchToProps = (
@@ -76,8 +76,7 @@ const mapDispatchToProps = (
     MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser>
   >
 ) => ({
-  setCurrentUser: (user: CurrentUser) =>
-    dispatch(getSetCurrentUserAction(user)),
+  setCurrentUser: (user: CurrentUser) => dispatch(setCurrentUserAction(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
