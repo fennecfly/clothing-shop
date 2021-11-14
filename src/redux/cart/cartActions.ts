@@ -11,6 +11,14 @@ export const toggleCartHiddenAction: MyActionCreatorWithoutParams<CartActionType
     payload: undefined,
   });
 
+export const setCartHiddenAction: MyActionCreator<
+  CartActionTypes.SetCartHidden,
+  boolean
+> = (hidden) => ({
+  type: CartActionTypes.SetCartHidden,
+  payload: hidden,
+});
+
 export const addCartItemAction: MyActionCreator<
   CartActionTypes.AddCartItem,
   Item

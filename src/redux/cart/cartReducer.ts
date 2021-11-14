@@ -14,6 +14,11 @@ const cartReducer: CartReducer = (state = initialState, action) => {
         ...state,
         hidden: !state.hidden,
       };
+    case CartActionTypes.SetCartHidden:
+      return {
+        ...state,
+        hidden: action.payload,
+      };
     case CartActionTypes.AddCartItem:
       return {
         ...state,

@@ -18,6 +18,10 @@ export type CartReducer = {
   ): CartState;
   (
     state: CartState | undefined,
+    action: MyReducerAction<CartActionTypes.SetCartHidden, boolean>
+  ): CartState;
+  (
+    state: CartState | undefined,
     action: MyReducerAction<CartActionTypes.AddCartItem, Item>
   ): CartState;
 };

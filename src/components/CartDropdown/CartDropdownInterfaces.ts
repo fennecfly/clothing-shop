@@ -3,4 +3,5 @@ import { CartItem } from "../../redux/cart/cartInterfaces";
 
 export interface CartDropdownProps extends RouteComponentProps {
   cartItems: CartItem[];
+  toggleCartHidden: () => void;
 }
