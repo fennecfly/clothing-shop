@@ -8,7 +8,10 @@
     {
       "rule": "react/self-closing-comp",
       "severity": "off"
+    },
+    {
+      "rule": "react/jsx-boolean-value",
+      "severity": "off"
     }
   ],
 }
-
