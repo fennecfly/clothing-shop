@@ -1,6 +1,8 @@
 import { CurrentUser } from "../../redux/user/userInterfaces";
 
-export interface HeaderProps {
+export interface HeaderStateProps {
   currentUser: CurrentUser;
   cartHidden: boolean;
 }
+
+export type HeaderProps = HeaderStateProps;

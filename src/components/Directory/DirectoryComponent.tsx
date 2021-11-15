@@ -1,11 +1,12 @@
 import React from "react";
+import { EmptyObject } from "../../helpers/EmptyObject";
 import MenuItem from "../MenuItem/MenuItemComponent";
-import { DirectoryProps, DirectoryState } from "./DirectoryInterfaces";
+import { DirectoryState } from "./DirectoryInterfaces";
 import "./DirectoryStyles.scss";
 import { sections } from "./sections";
 
-class Directory extends React.Component<DirectoryProps, DirectoryState> {
-  constructor(props: DirectoryProps) {
+class Directory extends React.Component<EmptyObject, DirectoryState> {
+  constructor(props: EmptyObject) {
     super(props);
 
     this.state = { sections };

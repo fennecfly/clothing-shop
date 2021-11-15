@@ -1,11 +1,13 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { addCartItemAction } from "../../redux/cart/cartActions";
-import { CartActionTypes } from "../../redux/cart/cartActionTypes";
-import { MyReducerAction } from "../../redux/reducerInterfaces";
+import { MyMapDispatchToProps } from "../../redux/storeInterfaces";
 import { Item } from "../../shopData/shopDataInterfaces";
 import CustomButton from "../CustomButton/CustomButtonComponent";
-import { CollectionItemProps } from "./CollectionItemInterfaces";
+import {
+  CollectionItemDispatchProps,
+  CollectionItemProps,
+} from "./CollectionItemInterfaces";
 import "./CollectionItemStyles.scss";
 
 const CollectionItem = ({
@@ -36,8 +38,8 @@ const CollectionItem = ({
   );
 };
 
-const mapDispatchToProps = (
-  dispatch: Dispatch<MyReducerAction<CartActionTypes.AddCartItem, Item>>
+const mapDispatchToProps: MyMapDispatchToProps<CollectionItemDispatchProps> = (
+  dispatch
 ) => ({
   addCartItem: (item: Item) => dispatch(addCartItemAction(item)),
 });

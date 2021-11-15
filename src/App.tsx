@@ -1,22 +1,23 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { Redirect, Route, Switch } from "react-router";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { EmptyObject } from "redux";
 import { createStructuredSelector } from "reselect";
 import "./App.css";
-import { AppProps } from "./AppInterfaces";
+import { AppDispatchProps, AppProps, AppStateProps } from "./AppInterfaces";
 import Header from "./components/Header/HeaderComponent";
 import { auth, createUserDocument } from "./firebase/firebaseUtils";
-import { EmptyObject } from "./helpers/EmptyObject";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPageComponent";
 import HomePage from "./pages/Homepage/HomepageComponent";
 import ShopPage from "./pages/ShopPage/ShopPageComponent";
 import SignInAndUpPage from "./pages/SignInAndUpPage/SignInAndUpPageComponent";
 import { selectCartItems } from "./redux/cart/cartSelectors";
-import { MyReducerAction } from "./redux/reducerInterfaces";
+import {
+  MyMapDispatchToProps,
+  MyMapStateToProps,
+} from "./redux/storeInterfaces";
 import { setCurrentUserAction } from "./redux/user/userActions";
-import { UserActionTypes } from "./redux/user/userActionTypes";
-import { CurrentUser, User } from "./redux/user/userInterfaces";
+import { User } from "./redux/user/userInterfaces";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 
 class App extends React.Component<AppProps, EmptyObject> {
@@ -82,17 +83,16 @@ class App extends React.Component<AppProps, EmptyObject> {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  cartItems: selectCartItems,
-});
+const mapStateToProps: MyMapStateToProps<AppStateProps> =
+  createStructuredSelector({
+    currentUser: selectCurrentUser,
+    cartItems: selectCartItems,
+  });
 
-const mapDispatchToProps = (
-  dispatch: Dispatch<
-    MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser>
-  >
+const mapDispatchToProps: MyMapDispatchToProps<AppDispatchProps> = (
+  dispatch
 ) => ({
-  setCurrentUser: (user: CurrentUser) => dispatch(setCurrentUserAction(user)),
+  setCurrentUser: (user) => dispatch(setCurrentUserAction(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

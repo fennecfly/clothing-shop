@@ -5,7 +5,11 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../redux/cart/cartSelectors";
-import { CheckoutPageProps } from "./CheckoutPageInterfaces";
+import { MyMapStateToProps } from "../../redux/storeInterfaces";
+import {
+  CheckoutPageProps,
+  CheoutPageStateProps,
+} from "./CheckoutPageInterfaces";
 import "./CheckoutPageStyles.scss";
 
 const CheckoutPage = ({ cartItems, total }: CheckoutPageProps): JSX.Element => (
@@ -48,9 +52,10 @@ const CheckoutPage = ({ cartItems, total }: CheckoutPageProps): JSX.Element => (
 //   removeCartItem: (id: number) => dispatch(remove(user)),
 // });
 
-const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
-  total: selectCartTotal,
-});
+const mapStateToProps: MyMapStateToProps<CheoutPageStateProps> =
+  createStructuredSelector({
+    cartItems: selectCartItems,
+    total: selectCartTotal,
+  });
 
 export default connect(mapStateToProps)(CheckoutPage);

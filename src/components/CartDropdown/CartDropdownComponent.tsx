@@ -1,11 +1,10 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { createStructuredSelector } from "reselect";
 import { toggleCartHiddenAction } from "../../redux/cart/cartActions";
-import { CartActionTypes } from "../../redux/cart/cartActionTypes";
 import { selectCartItems } from "../../redux/cart/cartSelectors";
-import { MyReducerAction } from "../../redux/reducerInterfaces";
+import { AppDispatch } from "../../redux/store";
 import CartItem from "../CartItem/CartItemComponent";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import { CartDropdownProps } from "./CartDropdownInterfaces";
@@ -45,11 +44,7 @@ const CartDropdown = ({
   );
 };
 
-const mapDispatchToProps = (
-  dispatch: Dispatch<
-    MyReducerAction<CartActionTypes.ToggleCartHidden, undefined>
-  >
-) => ({
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
   toggleCartHidden: () => dispatch(toggleCartHiddenAction()),
 });
 
