@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import CheckoutItem from "../../components/CheckoutItem/CheckoutItemComponent";
 import {
   selectCartItems,
   selectCartTotal,
@@ -36,21 +37,15 @@ const CheckoutPage = ({ cartItems, total }: CheckoutPageProps): JSX.Element => (
       </div>
     </div>
 
-    {cartItems.map((cartItem) => cartItem.name)}
+    {cartItems.map((cartItem) => (
+      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+    ))}
 
     <div className="total">
       <span>TOTAL: ${total}</span>
     </div>
   </div>
 );
-
-// const mapDispatchToProps = (
-//   dispatch: Dispatch<
-//     MyReducerAction<CartActionTypes.RemoveCartItem, number>
-//   >
-// ) => ({
-//   removeCartItem: (id: number) => dispatch(remove(user)),
-// });
 
 const mapStateToProps: MyMapStateToProps<CheoutPageStateProps> =
   createStructuredSelector({

@@ -36,6 +36,7 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-newline": "warn",
+    "react/jsx-key": "warn",
     "react/no-array-index-key": "warn",
     "import/no-extraneous-dependencies": "off",
     // remove this
