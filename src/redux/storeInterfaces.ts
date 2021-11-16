@@ -15,6 +15,7 @@ export type AppDispatch = Dispatch<
   | MyReducerAction<CartActionTypes.AddCartItem, Item>
   | MyReducerAction<CartActionTypes.ToggleCartHidden, undefined>
   | MyReducerAction<CartActionTypes.SetCartHidden, boolean>
+  | MyReducerAction<CartActionTypes.RemoveCartItem, number>
 >;
 
 export type MyMapStateToProps<StateProps> = MapStateToProps<

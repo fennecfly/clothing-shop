@@ -24,4 +24,8 @@ export type CartReducer = {
     state: CartState | undefined,
     action: MyReducerAction<CartActionTypes.AddCartItem, Item>
   ): CartState;
+  (
+    state: CartState | undefined,
+    action: MyReducerAction<CartActionTypes.RemoveCartItem, number>
+  ): CartState;
 };

@@ -26,3 +26,11 @@ export const addCartItemAction: MyActionCreator<
   type: CartActionTypes.AddCartItem,
   payload: item,
 });
+
+export const removeCartItemAction: MyActionCreator<
+  CartActionTypes.RemoveCartItem,
+  number
+> = (id) => ({
+  type: CartActionTypes.RemoveCartItem,
+  payload: id,
+});

@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { addCartItemAction } from "../../redux/cart/cartActions";
 import { MyMapDispatchToProps } from "../../redux/storeInterfaces";
-import { Item } from "../../shopData/shopDataInterfaces";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import {
   CollectionItemDispatchProps,
@@ -41,7 +40,7 @@ const CollectionItem = ({
 const mapDispatchToProps: MyMapDispatchToProps<CollectionItemDispatchProps> = (
   dispatch
 ) => ({
-  addCartItem: (item: Item) => dispatch(addCartItemAction(item)),
+  addCartItem: (item) => dispatch(addCartItemAction(item)),
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);
