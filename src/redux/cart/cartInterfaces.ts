@@ -18,14 +18,19 @@ export type CartReducer = {
   ): CartState;
   (
     state: CartState | undefined,
-    action: MyReducerAction<CartActionTypes.SetCartHidden, boolean>
+    action: MyReducerAction<CartActionTypes.AddCartItem, Item>
   ): CartState;
   (
     state: CartState | undefined,
-    action: MyReducerAction<CartActionTypes.AddCartItem, Item>
+    action: MyReducerAction<CartActionTypes.DeleteCartItem, number>
   ): CartState;
   (
     state: CartState | undefined,
     action: MyReducerAction<CartActionTypes.RemoveCartItem, number>
   ): CartState;
 };
+
+export type DeleteCartItem = (id: number) => void;
+export type RemoveCartItem = (id: number) => void;
+export type AddCartItem = (item: CartItem | Item) => void;
+export type ToggleCartHidden = () => void;

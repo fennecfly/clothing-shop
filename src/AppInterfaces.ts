@@ -1,8 +1,8 @@
 import { CartItem } from "./redux/cart/cartInterfaces";
-import { CurrentUser } from "./redux/user/userInterfaces";
+import { CurrentUser, SetCurrentUser } from "./redux/user/userInterfaces";
 
 export interface AppDispatchProps {
-  setCurrentUser: (user: CurrentUser) => void;
+  setCurrentUser: SetCurrentUser;
 }
 
 export interface AppStateProps {

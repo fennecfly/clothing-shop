@@ -1,7 +1,14 @@
-import { CartItem } from "../../redux/cart/cartInterfaces";
+import {
+  AddCartItem,
+  CartItem,
+  DeleteCartItem,
+  RemoveCartItem,
+} from "../../redux/cart/cartInterfaces";
 
 export interface CheckoutItemDispatchProps {
-  removeCartItem: (id: number) => void;
+  deleteCartItem: DeleteCartItem;
+  removeCartItem: RemoveCartItem;
+  addCartItem: AddCartItem;
 }
 
 export interface CheckoutItemProps extends CheckoutItemDispatchProps {

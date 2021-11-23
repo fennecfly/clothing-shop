@@ -1,7 +1,8 @@
+import { AddCartItem } from "../../redux/cart/cartInterfaces";
 import { Item } from "../../shopData/shopDataInterfaces";
 
 export interface CollectionItemDispatchProps {
-  addCartItem: (item: Item) => void;
+  addCartItem: AddCartItem;
 }
 
 export interface CollectionItemProps extends CollectionItemDispatchProps {
