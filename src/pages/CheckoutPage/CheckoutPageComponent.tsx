@@ -6,7 +6,7 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../redux/cart/cartSelectors";
-import { MyMapStateToProps } from "../../redux/storeInterfaces";
+import { MyMapStateToProps } from "../../redux/reducerInterfaces";
 import {
   CheckoutPageProps,
   CheoutPageStateProps,

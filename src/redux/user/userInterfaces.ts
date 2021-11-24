@@ -1,5 +1,4 @@
-import { MyReducerAction } from "../reducerInterfaces";
-import { UserActionTypes } from "./userActionTypes";
+import { Actions } from "../reducerInterfaces";
 export interface User {
   id: string;
   creationDate: string;
@@ -15,7 +14,5 @@ export interface CurrentUserState {
 
 export type UserReducer = (
   state: CurrentUserState | undefined,
-  action: MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser>
+  action: Actions["setCurrentUser"]
 ) => CurrentUserState;
-
-export type SetCurrentUser = (user: CurrentUser) => void;

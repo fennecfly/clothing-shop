@@ -7,7 +7,7 @@ import { selectCartItems } from "../../redux/cart/cartSelectors";
 import {
   MyMapDispatchToProps,
   MyMapStateToProps,
-} from "../../redux/storeInterfaces";
+} from "../../redux/reducerInterfaces";
 import CartItem from "../CartItem/CartItemComponent";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import {

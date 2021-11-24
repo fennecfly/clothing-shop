@@ -15,7 +15,7 @@ import { selectCartItems } from "./redux/cart/cartSelectors";
 import {
   MyMapDispatchToProps,
   MyMapStateToProps,
-} from "./redux/storeInterfaces";
+} from "./redux/reducerInterfaces";
 import { setCurrentUserAction } from "./redux/user/userActions";
 import { User } from "./redux/user/userInterfaces";
 import { selectCurrentUser } from "./redux/user/userSelectors";

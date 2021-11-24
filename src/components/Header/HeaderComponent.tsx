@@ -5,7 +5,7 @@ import { createStructuredSelector } from "reselect";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebaseUtils";
 import { selectCartHidden } from "../../redux/cart/cartSelectors";
-import { MyMapStateToProps } from "../../redux/storeInterfaces";
+import { MyMapStateToProps } from "../../redux/reducerInterfaces";
 import { selectCurrentUser } from "../../redux/user/userSelectors";
 import CartDropdown from "../CartDropdown/CartDropdownComponent";
 import CartIcon from "../CartIcon/CartIconComponent";

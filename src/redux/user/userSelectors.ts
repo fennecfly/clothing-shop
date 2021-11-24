@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { RootState } from "../storeInterfaces";
+import { RootState } from "../reducerInterfaces";
 
 const selectUser = (state: RootState) => state.user;
 

@@ -1,13 +1,15 @@
 import { RouteComponentProps } from "react-router";
-import { CartItem, ToggleCartHidden } from "../../redux/cart/cartInterfaces";
+import { CartItem } from "../../redux/cart/cartInterfaces";
+import { ReducerFunctions } from "../../redux/reducerInterfaces";
 
 export interface CartDropdownStateProps {
   cartItems: CartItem[];
 }
 
-export interface CartDropdownDispatchProps {
-  toggleCartHidden: ToggleCartHidden;
-}
+export type CartDropdownDispatchProps = Pick<
+  ReducerFunctions,
+  "toggleCartHidden"
+>;
 
 export interface CartDropdownProps
   extends RouteComponentProps,

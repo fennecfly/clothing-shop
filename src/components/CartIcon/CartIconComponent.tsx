@@ -4,7 +4,7 @@ import { createStructuredSelector } from "reselect";
 import { ReactComponent as ShoppingIcon } from "../../assets/shoppingBag.svg";
 import { toggleCartHiddenAction } from "../../redux/cart/cartActions";
 import { selectCartItemsCount } from "../../redux/cart/cartSelectors";
-import { MyMapDispatchToProps } from "../../redux/storeInterfaces";
+import { MyMapDispatchToProps } from "../../redux/reducerInterfaces";
 import { CartIconDispatchProps, CartIconProps } from "./CartIconInterfaces";
 import "./CartIconStyles.scss";
 

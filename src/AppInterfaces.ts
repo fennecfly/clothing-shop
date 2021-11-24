@@ -1,9 +1,8 @@
 import { CartItem } from "./redux/cart/cartInterfaces";
-import { CurrentUser, SetCurrentUser } from "./redux/user/userInterfaces";
+import { ReducerFunctions } from "./redux/reducerInterfaces";
+import { CurrentUser } from "./redux/user/userInterfaces";
 
-export interface AppDispatchProps {
-  setCurrentUser: SetCurrentUser;
-}
+export type AppDispatchProps = Pick<ReducerFunctions, "setCurrentUser">;
 
 export interface AppStateProps {
   currentUser: CurrentUser;

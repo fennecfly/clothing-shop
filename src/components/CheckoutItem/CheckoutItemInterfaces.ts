@@ -1,15 +1,10 @@
-import {
-  AddCartItem,
-  CartItem,
-  DeleteCartItem,
-  RemoveCartItem,
-} from "../../redux/cart/cartInterfaces";
+import { CartItem } from "../../redux/cart/cartInterfaces";
+import { ReducerFunctions } from "../../redux/reducerInterfaces";
 
-export interface CheckoutItemDispatchProps {
-  deleteCartItem: DeleteCartItem;
-  removeCartItem: RemoveCartItem;
-  addCartItem: AddCartItem;
-}
+export type CheckoutItemDispatchProps = Pick<
+  ReducerFunctions,
+  "deleteCartItem" | "addCartItem" | "removeCartItem"
+>;
 
 export interface CheckoutItemProps extends CheckoutItemDispatchProps {
   cartItem: CartItem;

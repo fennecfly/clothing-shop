@@ -5,7 +5,7 @@ import {
   deleteCartItemAction,
   removeCartItemAction,
 } from "../../redux/cart/cartActions";
-import { MyMapDispatchToProps } from "../../redux/storeInterfaces";
+import { MyMapDispatchToProps } from "../../redux/reducerInterfaces";
 import {
   CheckoutItemDispatchProps,
   CheckoutItemProps,

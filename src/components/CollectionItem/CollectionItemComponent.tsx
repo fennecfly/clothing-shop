@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addCartItemAction } from "../../redux/cart/cartActions";
-import { MyMapDispatchToProps } from "../../redux/storeInterfaces";
+import { MyMapDispatchToProps } from "../../redux/reducerInterfaces";
 import CustomButton from "../CustomButton/CustomButtonComponent";
 import {
   CollectionItemDispatchProps,
