@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/clothing-shop/static/css/main.fb0cdde6.chunk.css",
-    "main.js": "/clothing-shop/static/js/main.e38659ac.chunk.js",
-    "main.js.map": "/clothing-shop/static/js/main.e38659ac.chunk.js.map",
+    "main.css": "/clothing-shop/static/css/main.65df5cbe.chunk.css",
+    "main.js": "/clothing-shop/static/js/main.06801d82.chunk.js",
+    "main.js.map": "/clothing-shop/static/js/main.06801d82.chunk.js.map",
     "runtime-main.js": "/clothing-shop/static/js/runtime-main.985f1829.js",
     "runtime-main.js.map": "/clothing-shop/static/js/runtime-main.985f1829.js.map",
-    "static/js/2.929d15fc.chunk.js": "/clothing-shop/static/js/2.929d15fc.chunk.js",
-    "static/js/2.929d15fc.chunk.js.map": "/clothing-shop/static/js/2.929d15fc.chunk.js.map",
+    "static/js/2.8b42c96f.chunk.js": "/clothing-shop/static/js/2.8b42c96f.chunk.js",
+    "static/js/2.8b42c96f.chunk.js.map": "/clothing-shop/static/js/2.8b42c96f.chunk.js.map",
     "index.html": "/clothing-shop/index.html",
-    "static/css/main.fb0cdde6.chunk.css.map": "/clothing-shop/static/css/main.fb0cdde6.chunk.css.map",
-    "static/js/2.929d15fc.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.929d15fc.chunk.js.LICENSE.txt",
+    "static/css/main.65df5cbe.chunk.css.map": "/clothing-shop/static/css/main.65df5cbe.chunk.css.map",
+    "static/js/2.8b42c96f.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.8b42c96f.chunk.js.LICENSE.txt",
     "static/media/crown.207ae289.svg": "/clothing-shop/static/media/crown.207ae289.svg",
     "static/media/shoppingBag.a688874f.svg": "/clothing-shop/static/media/shoppingBag.a688874f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.985f1829.js",
-    "static/js/2.929d15fc.chunk.js",
-    "static/css/main.fb0cdde6.chunk.css",
-    "static/js/main.e38659ac.chunk.js"
+    "static/js/2.8b42c96f.chunk.js",
+    "static/css/main.65df5cbe.chunk.css",
+    "static/js/main.06801d82.chunk.js"
   ]
 }
