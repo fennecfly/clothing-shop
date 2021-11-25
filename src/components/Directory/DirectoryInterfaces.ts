@@ -9,3 +9,7 @@ export interface Section {
 export interface DirectoryState {
   sections: Section[];
 }
+
+export interface DirectoryProps {
+  sections: Section[];
+}

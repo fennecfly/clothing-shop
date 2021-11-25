@@ -21,14 +21,6 @@ export interface MyActionCreatorWithoutParams<Type> {
   (): MyReducerAction<Type, undefined>;
 }
 
-export interface ReducerFunctions {
-  deleteCartItem: (id: number) => void;
-  addCartItem: (item: CartItem | Item) => void;
-  removeCartItem: (id: number) => void;
-  toggleCartHidden: () => void;
-  setCurrentUser: (user: CurrentUser) => void;
-}
-
 export interface Actions {
   deleteCartItem: MyReducerAction<CartActionTypes.DeleteCartItem, number>;
   addCartItem: MyReducerAction<CartActionTypes.AddCartItem, Item>;
@@ -38,6 +30,15 @@ export interface Actions {
     undefined
   >;
   setCurrentUser: MyReducerAction<UserActionTypes.SetCurrentUser, CurrentUser>;
+  undefined: MyReducerAction<"", undefined>;
+}
+
+export interface ReducerFunctions {
+  deleteCartItem: (id: number) => void;
+  addCartItem: (item: CartItem | Item) => void;
+  removeCartItem: (id: number) => void;
+  toggleCartHidden: () => void;
+  setCurrentUser: (user: CurrentUser) => void;
 }
 
 export type RootState = ReturnType<typeof store.getState>;
