@@ -1,6 +1,6 @@
-import { Collection } from "./shopDataInterfaces";
+import { Collection } from "./shopInterfaces";
 
-export const shopData: Collection[] = [
+export const collections: Collection[] = [
   {
     id: 1,
     title: "Hats",

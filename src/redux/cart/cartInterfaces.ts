@@ -1,7 +1,7 @@
-import { Item } from "../../shopData/shopDataInterfaces";
 import { Actions } from "../reducerInterfaces";
+import { CollectionItem } from "../shopReducer/shopInterfaces";
 
-export interface CartItem extends Item {
+export interface CartItem extends CollectionItem {
   count: number;
 }
 

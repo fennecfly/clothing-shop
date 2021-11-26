@@ -1,8 +1,8 @@
-import { Item } from "../../shopData/shopDataInterfaces";
 import {
   MyActionCreator,
   MyActionCreatorWithoutParams,
 } from "../reducerInterfaces";
+import { CollectionItem } from "../shopReducer/shopInterfaces";
 import { CartActionTypes } from "./cartActionTypes";
 
 export const toggleCartHiddenAction: MyActionCreatorWithoutParams<CartActionTypes.ToggleCartHidden> =
@@ -13,7 +13,7 @@ export const toggleCartHiddenAction: MyActionCreatorWithoutParams<CartActionType
 
 export const addCartItemAction: MyActionCreator<
   CartActionTypes.AddCartItem,
-  Item
+  CollectionItem
 > = (item) => ({
   type: CartActionTypes.AddCartItem,
   payload: item,

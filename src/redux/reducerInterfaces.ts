@@ -1,9 +1,9 @@
 import { Dispatch } from "react";
 import { MapStateToProps } from "react-redux";
 import { EmptyObject } from "redux";
-import { Item } from "../shopData/shopDataInterfaces";
 import { CartActionTypes } from "./cart/cartActionTypes";
 import { CartItem } from "./cart/cartInterfaces";
+import { CollectionItem } from "./shopReducer/shopInterfaces";
 import store from "./store";
 import { UserActionTypes } from "./user/userActionTypes";
 import { CurrentUser } from "./user/userInterfaces";
@@ -23,7 +23,7 @@ export interface MyActionCreatorWithoutParams<Type> {
 
 export interface Actions {
   deleteCartItem: MyReducerAction<CartActionTypes.DeleteCartItem, number>;
-  addCartItem: MyReducerAction<CartActionTypes.AddCartItem, Item>;
+  addCartItem: MyReducerAction<CartActionTypes.AddCartItem, CollectionItem>;
   removeCartItem: MyReducerAction<CartActionTypes.RemoveCartItem, number>;
   toggleCartHidden: MyReducerAction<
     CartActionTypes.ToggleCartHidden,
@@ -35,7 +35,7 @@ export interface Actions {
 
 export interface ReducerFunctions {
   deleteCartItem: (id: number) => void;
-  addCartItem: (item: CartItem | Item) => void;
+  addCartItem: (item: CartItem | CollectionItem) => void;
   removeCartItem: (id: number) => void;
   toggleCartHidden: () => void;
   setCurrentUser: (user: CurrentUser) => void;

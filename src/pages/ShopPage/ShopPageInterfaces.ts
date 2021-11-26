@@ -1,5 +1,5 @@
-import { Collection } from "../../shopData/shopDataInterfaces";
+import { Collection } from "../../redux/shopReducer/shopInterfaces";
 
-export interface ShopPageState {
-  shopData: Collection[];
+export interface ShopPageProps {
+  collections: Collection[];
 }

@@ -1,4 +1,4 @@
-import { Item } from "../../shopData/shopDataInterfaces";
+import { CollectionItem } from "../shopReducer/shopInterfaces";
 import { CartItem } from "./cartInterfaces";
 
 const findCartItem = (
@@ -10,7 +10,7 @@ const findCartItem = (
 
 export const addCartItemUtil = (
   cartItems: CartItem[],
-  cartItemToAdd: CartItem | Item
+  cartItemToAdd: CartItem | CollectionItem
 ): CartItem[] => {
   const existingCartItem = findCartItem(cartItems, cartItemToAdd.id);
 
