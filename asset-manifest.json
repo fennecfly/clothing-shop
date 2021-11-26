@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/clothing-shop/static/css/main.7f748ec0.chunk.css",
-    "main.js": "/clothing-shop/static/js/main.42b7e3ee.chunk.js",
-    "main.js.map": "/clothing-shop/static/js/main.42b7e3ee.chunk.js.map",
+    "main.js": "/clothing-shop/static/js/main.ef791a9a.chunk.js",
+    "main.js.map": "/clothing-shop/static/js/main.ef791a9a.chunk.js.map",
     "runtime-main.js": "/clothing-shop/static/js/runtime-main.985f1829.js",
     "runtime-main.js.map": "/clothing-shop/static/js/runtime-main.985f1829.js.map",
     "static/js/2.e0d82e2f.chunk.js": "/clothing-shop/static/js/2.e0d82e2f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.985f1829.js",
     "static/js/2.e0d82e2f.chunk.js",
     "static/css/main.7f748ec0.chunk.css",
-    "static/js/main.42b7e3ee.chunk.js"
+    "static/js/main.ef791a9a.chunk.js"
   ]
 }
