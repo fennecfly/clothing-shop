@@ -21,35 +21,31 @@ const CartDropdown = ({
   cartItems,
   history,
   toggleCartHidden,
-  ...o
-}: CartDropdownProps): JSX.Element => {
-  console.log(o);
-  return (
-    <div className="cartDropdown">
-      <div className="cartItems">
-        {cartItems.length ? (
-          cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} item={cartItem} />
-          ))
-        ) : (
-          <span className="emptyMessage">Your cart is empty</span>
-        )}
-      </div>
-
-      <CustomButton
-        onClick={() => {
-          if (cartItems.length && history.location.pathname !== "/checkout") {
-            toggleCartHidden();
-            history.push("/checkout");
-          }
-        }}
-        inverted={true}
-      >
-        GO TO CHECKOUT
-      </CustomButton>
+}: CartDropdownProps): JSX.Element => (
+  <div className="cartDropdown">
+    <div className="cartItems">
+      {cartItems.length ? (
+        cartItems.map((cartItem) => (
+          <CartItem key={cartItem.id} item={cartItem} />
+        ))
+      ) : (
+        <span className="emptyMessage">Your cart is empty</span>
+      )}
     </div>
-  );
-};
+
+    <CustomButton
+      onClick={() => {
+        if (cartItems.length && history.location.pathname !== "/checkout") {
+          toggleCartHidden();
+          history.push("/checkout");
+        }
+      }}
+      inverted={true}
+    >
+      GO TO CHECKOUT
+    </CustomButton>
+  </div>
+);
 
 const mapDispatchToProps: MyMapDispatchToProps<CartDropdownDispatchProps> = (
   dispatch

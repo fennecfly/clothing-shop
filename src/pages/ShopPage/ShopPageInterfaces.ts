@@ -1,5 +1,3 @@
-import { Collection } from "../../redux/shopReducer/shopInterfaces";
+import { RouteComponentProps } from "react-router";
 
-export interface ShopPageProps {
-  collections: Collection[];
-}
+export type ShopPageProps = RouteComponentProps;
