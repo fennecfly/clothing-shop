@@ -14,8 +14,12 @@ export interface Collection {
   items: CollectionItem[];
 }
 
+export interface CollectionData {
+  [key: string]: Collection;
+}
+
 export interface ShopState {
-  collections: Collection[];
+  collections: CollectionData;
 }
 
 export type ShopReducer = (

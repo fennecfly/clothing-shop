@@ -1,5 +1,5 @@
-import { Collection } from "../../redux/shopReducer/shopInterfaces";
+import { CollectionData } from "../../redux/shopReducer/shopInterfaces";
 
 export interface CollectionsOverviewProps {
-  collections: Collection[];
+  collections: CollectionData;
 }
