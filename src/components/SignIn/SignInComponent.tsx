@@ -33,9 +33,11 @@ class SignIn extends React.Component<EmptyObject, SignInState> {
         } else if (error.code === "auth/wrong-password") {
           alert("The password is wrong or the user signed up with Google");
         } else {
+          alert("Unknown Error");
           console.log(error);
         }
       } else {
+        alert("Unknown Error");
         console.log(error);
       }
     }
